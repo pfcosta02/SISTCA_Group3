@@ -30,12 +30,17 @@ public class Black_viper : MonoBehaviour
     public float carSpeed;
     Vector3 position;
 
+    public float limitRight = 2.4f;
+    public float limitLeft = 2.24f;
+
     void Start() {
         position = transform.position;
     }
 
     void Update() {
         position.x += Input.GetAxis ("Horizontal") * carSpeed * Time.deltaTime;
+        position.x = Mathf.Clamp(position.x, -limitLeft, limitRight);
+
         transform.position = position;
     }
 }
