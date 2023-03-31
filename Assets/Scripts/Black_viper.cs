@@ -4,29 +4,6 @@ using UnityEngine;
 
 public class Black_viper : MonoBehaviour
 {
-    /*
-    private Rigidbody2D rb;
-    public float moveSpeed = 100f;
-    private float direction;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
-
-    void Update()
-    {
-        direction = Input.GetAxisRaw("Horizontal");
-    }
-
-    // Update is called once per frame
-    private void fixedUpdate()
-    {
-        rb.velocity = Vector2.zero;
-        rb.velocity = new Vector2(direction * moveSpeed * Time.fixedDeltaTime, 0);
-    }
-    */
     public float carSpeed;
     Vector3 position;
 
@@ -42,5 +19,12 @@ public class Black_viper : MonoBehaviour
         position.x = Mathf.Clamp(position.x, -limitLeft, limitRight);
 
         transform.position = position;
+    }
+
+    // Colisions
+    void OnCollisionEnter2D(Collision2D colision) {
+        if (colision.gameObject.tag == "Enemy Car") {      // Se detetar uma colisão com o gameObject com a tag "Enemy Car"
+            Destroy (gameObject);                          // Destroi o nosso gameObject
+        }
     }
 }
