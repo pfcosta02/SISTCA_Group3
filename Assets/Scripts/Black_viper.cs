@@ -32,7 +32,8 @@ public class Black_viper : MonoBehaviour
     void Update() {
 
         if (currentPlatformAndroid == true) {
-            Accelerometer();
+           // Accelerometer();
+            
         } else {
             position.x += Input.GetAxis ("Horizontal") * carSpeed * Time.deltaTime;
             position.x = Mathf.Clamp(position.x, -limitLeft, limitRight);
@@ -56,18 +57,7 @@ public class Black_viper : MonoBehaviour
 
     // Accelerometer
 
-    void Accelerometer() {
-        float x = Input.acceleration.x;
-        if (x < -0.1f) {
-            MoveLeft();
-        }
-        else if (x > 0.1f) {
-            MoveRight();
-        }
-        else {
-            SetVelocityZero();
-        }
-    }
+    
 
     public void MoveLeft () {
         rb.velocity = new Vector2 (-carSpeed, 0);
@@ -79,5 +69,19 @@ public class Black_viper : MonoBehaviour
 
     public void SetVelocityZero () {
         rb.velocity = Vector2.zero;
+    }
+
+
+    void Accelerometer() {
+        float x = Input.acceleration.x;
+        if (x < -0.1f) {
+            MoveLeft();
+        }
+        else if (x > 0.1f) {
+            MoveRight();
+        }
+        else {
+            SetVelocityZero();
+        }
     }
 }
