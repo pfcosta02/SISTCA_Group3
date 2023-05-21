@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class uiManager : MonoBehaviour
@@ -27,6 +28,10 @@ public class uiManager : MonoBehaviour
         }
     }
 
+    public void Play() {
+        SceneManager.LoadScene("Main");  // Faz upload de uma nova scene
+    }
+
     void scoreUpdate() {
         if(!gameOver){
             score += 1;
@@ -39,6 +44,15 @@ public class uiManager : MonoBehaviour
             background.speed = 0f;
         }
         spawn.timer = 100f;
+        Invoke("returnMenu", 4f);
+    }
+
+    public void returnMenu(){
+        SceneManager.LoadScene("menu");
+    }
+
+    public void exit(){
+        Application.Quit();
     }
 
     public void Pause(){
