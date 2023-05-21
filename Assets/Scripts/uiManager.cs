@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class uiManager : MonoBehaviour
 {
     public Text scoreText;
@@ -21,7 +22,9 @@ public class uiManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score: " + score;
+        if (scoreText != null){
+            scoreText.text = "Score: " + score;
+        }
     }
 
     void scoreUpdate() {
