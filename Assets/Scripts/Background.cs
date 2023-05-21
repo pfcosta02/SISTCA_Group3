@@ -17,6 +17,7 @@ public class Background : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         float offset = Time.time * speed;
 
         if(!xAxis) {

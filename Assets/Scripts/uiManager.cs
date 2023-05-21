@@ -5,13 +5,14 @@ using UnityEngine.UI;
 public class uiManager : MonoBehaviour
 {
     public Text scoreText;
-    bool gameOver;
+    public bool gameOver = false;
     int score;
+    public Background background;
+    public Car_spawn spawn;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameOver = false;
         score = 0;
         InvokeRepeating ("scoreUpdate", 1.0f, 0.5f);
         
@@ -31,6 +32,10 @@ public class uiManager : MonoBehaviour
 
     public void gameOverActivated(){
         gameOver = true;
+        if (background != null) {
+            background.speed = 0f;
+        }
+        spawn.timer = 100f;
     }
 
     public void Pause(){

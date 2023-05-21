@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -170,6 +170,7 @@ MonoBehaviour:
   car: {fileID: 2622358334374736847, guid: 088ed0a4600be634cb5c30ada8958b71, type: 3}
   maxPosition: 2.1
   delaySpawn: 0.5
+  timer: 0
 --- !u!1 &290909552
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473239807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.76, y: -2.5, z: 0}
+  m_LocalPosition: {x: 0.72, y: -3.48, z: 0}
   m_LocalScale: {x: 0.87, y: 0.83985037, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1112,6 +1113,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1702116972}
+  gameOver: 0
+  background: {fileID: 744194524}
+  spawn: {fileID: 202513198}
 --- !u!4 &1213640177
 Transform:
   m_ObjectHideFlags: 0

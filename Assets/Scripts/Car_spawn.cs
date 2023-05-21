@@ -7,7 +7,7 @@ public class Car_spawn : MonoBehaviour
     public GameObject car;
     public float maxPosition = 2.1f;
     public float delaySpawn = 1.5f;
-    float timer;
+    public float timer;
 
     // Start is called before the first frame update
     void Start()
